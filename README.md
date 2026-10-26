@@ -1,7 +1,7 @@
 <div align="center">
 
 # 🩺 MediGuide AI
-### *Next-Generation Clinical Triage & Care Navigation Platform*
+### *Clinical Triage & Healthcare Navigation Platform*
 
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.35+-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
@@ -13,7 +13,7 @@
 <br/>
 
 <p align="center">
-  <b>Sub-Second AI Clinical Triage</b> • <b>Deterministic Emergency Red-Flag Overrides</b> • <b>ICMR & WHO RAG Grounding</b> • <b>Live GPS Facility Discovery</b>
+  <b>Fast AI Clinical Triage</b> • <b>Deterministic Emergency Red-Flag Screener</b> • <b>Guideline-Referenced RAG</b> • <b>Geospatial Care Discovery</b>
 </p>
 
 [✨ Key Features](#-key-features) • [🏗️ Architecture](#-system-architecture) • [⚡ Quick Start](#-quick-start) • [📊 Comparison](#-why-mediguide-ai) • [☁️ Deployment](#-cloud-deployment)
@@ -27,7 +27,7 @@
 ## 💡 What is MediGuide AI?
 
 > [!IMPORTANT]
-> **MediGuide AI** is an enterprise-grade clinical decision-support and care navigation platform. It bridges the critical gap between confusing internet health searches and actual hospital care—helping patients articulate symptoms clearly, screening life-threatening red flags early, and routing them to the right medical specialist nearby.
+> **MediGuide AI** is an open-source clinical decision-support and care navigation platform. It bridges the critical gap between confusing internet health searches and actual clinical consultations—helping patients articulate symptoms clearly, screening life-threatening emergency red flags early, and routing them to the appropriate medical specialty and nearby healthcare facilities.
 
 ```
                       ┌──────────────────────────────────────┐
@@ -40,14 +40,14 @@
            Emergency Detected    │                │  Normal / Non-Acute
         ┌────────────────────────┘                └────────────────────────┐
         ▼                                                                  ▼
- 🚨 112 / 108 Emergency Hotlines                          📚 Clinical RAG Protocol Grounding
+ 🚨 112 / 108 Emergency Hotlines                          📚 Clinical RAG Protocol Reference
  (Immediate Hospital Dispatch)                            (ICMR • WHO • NICE Protocols)
                                                                            │
                                                                            ▼
                                                           ⚡ Dual Neural Core (Groq + Gemini)
                                                                            │
                                                                            ▼
-                                                          🏥 Live OpenStreetMap Doctor Finder
+                                                          🏥 OpenStreetMap Geospatial Finder
 ```
 
 ---
@@ -59,14 +59,14 @@
     <td width="50%">
       <h3>🛡️ Dual-Layer Safety Guardrails</h3>
       <ul>
-        <li><b>Layer 1 (Independent Deterministic Core):</b> Screens acute emergencies (chest pain, stroke FAST, neonatal fever &lt;28 days, severe dyspnea) <i>before</i> AI inference.</li>
-        <li><b>Layer 2 (Neural Clinical Guidance):</b> Synthesizes non-diagnostic consultation prep reports.</li>
+        <li><b>Layer 1 (Independent Deterministic Core):</b> Screens acute emergencies (chest pain, stroke FAST signs, neonatal fever &lt;28 days, severe dyspnea) <i>before</i> AI inference.</li>
+        <li><b>Layer 2 (Neural Care Guidance):</b> Synthesizes non-diagnostic consultation preparation summaries.</li>
       </ul>
     </td>
     <td width="50%">
       <h3>⚡ Multi-Provider Neural Failover</h3>
       <ul>
-        <li><b>Primary:</b> Groq Cloud (<code>llama-3.3-70b-versatile</code>) for sub-second response times.</li>
+        <li><b>Primary:</b> Groq Cloud (<code>llama-3.3-70b-versatile</code>) for low-latency inference.</li>
         <li><b>Secondary (Hot Standby):</b> Google Gemini (<code>gemini-1.5-flash</code>) with automated seamless failover.</li>
         <li><b>Offline:</b> Deterministic local rules fallback.</li>
       </ul>
@@ -74,18 +74,18 @@
   </tr>
   <tr>
     <td width="50%">
-      <h3>📚 Evidence-Based RAG Grounding</h3>
+      <h3>📚 Guideline-Referenced RAG</h3>
       <ul>
-        <li>Grounds all recommendations in published clinical practice guidelines from <b>ICMR</b>, <b>WHO</b>, and <b>NICE</b>.</li>
-        <li>Displays explicit guideline authority citations on every patient assessment report.</li>
+        <li>Augments prompt context with relevant clinical protocol excerpts from <b>ICMR</b>, <b>WHO</b>, and <b>NICE</b> guidelines.</li>
+        <li>Displays guideline authority and category citations on patient assessment summaries.</li>
       </ul>
     </td>
     <td width="50%">
-      <h3>📍 Live GPS Doctor & Clinic Finder</h3>
+      <h3>📍 Geospatial Healthcare Locator</h3>
       <ul>
-        <li>Direct OpenStreetMap Nominatim &amp; Overpass API integration.</li>
-        <li>Strict specialty catalog matching (Cardiology, Eye, ENT, Pulmonology, Orthopedics, Pediatrics, Dentistry, Internal Med).</li>
-        <li>Verified hospital search across metro &amp; Tier-2/3 cities (e.g. Muzaffarpur, Patna, Delhi, Bengaluru).</li>
+        <li>Direct OpenStreetMap Nominatim &amp; Overpass API integration with browser GPS.</li>
+        <li>Clinical specialty taxonomy matching (Cardiology, Eye, ENT, Pulmonology, Orthopedics, Pediatrics, Dentistry, Internal Med).</li>
+        <li>Public healthcare facility discovery across metro &amp; Tier-2/3 cities (e.g. Muzaffarpur, Patna, Delhi, Bengaluru).</li>
       </ul>
     </td>
   </tr>
@@ -112,14 +112,14 @@
 
 ## 📊 Why MediGuide AI?
 
-| Capability | Generic Google Search | Typical Chatbot | 🩺 MediGuide AI |
+| Capability | Generic Search Engine | Basic Chatbot | 🩺 MediGuide AI |
 | :--- | :---: | :---: | :---: |
 | **Emergency Red-Flag Overrides** | ❌ No | ⚠️ Unreliable | ✅ **Deterministic Layer 1** |
-| **Evidence-Based RAG Protocols** | ❌ No | ❌ Hallucinates | ✅ **ICMR • WHO • NICE Cited** |
-| **Specialty Care Matching** | ❌ None | ⚠️ Generic Advice | ✅ **Exact Specialty Routing** |
-| **Nearby Hospital Discovery** | ⚠️ Sponsored Ads | ❌ No Geo Support | ✅ **Live OpenStreetMap GPS** |
+| **Guideline Protocol Grounding** | ❌ No | ❌ Hallucinates | ✅ **ICMR • WHO • NICE Cited** |
+| **Specialty Care Matching** | ❌ None | ⚠️ Generic Advice | ✅ **Clinical Discipline Mapping** |
+| **Nearby Facility Discovery** | ⚠️ Sponsored Ads | ❌ No Geo Support | ✅ **OpenStreetMap Geospatial** |
 | **Multi-Provider Failover** | ❌ N/A | ❌ Single Point Failure | ✅ **Groq + Gemini Hot Standby** |
-| **Doctor-Ready Reports** | ❌ No | ❌ Plain Text | ✅ **PDF & Devanagari/Hindi HTML**|
+| **Doctor Consultation Dossier** | ❌ No | ❌ Plain Text | ✅ **PDF & Devanagari/Hindi HTML**|
 
 ---
 
