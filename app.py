@@ -44,7 +44,7 @@ st.markdown(
                 Intelligent Clinical Triage <span style="color: #0d9488;">&amp; Care Navigation</span>
             </div>
             <p class="mg-hero-compact-desc">
-                Clinical decision support grounded in <b>ICMR, WHO &amp; NICE</b> protocols with sub-second AI triage and deterministic red-flag safety overrides.
+                Clinical decision support referencing <b>ICMR, WHO &amp; NICE</b> guideline protocols with fast AI triage and deterministic red-flag safety screening.
             </p>
         </div>
         <div class="mg-hero-compact-right">
@@ -169,7 +169,7 @@ st.markdown(
                     2️⃣ Right Doctor &amp; Hospital Matching
                 </div>
                 <div style="font-size: 0.86rem; color: #334155; line-height: 1.55;">
-                    Never guess which medical specialist to consult. MediGuide routes your condition to the correct clinical specialty (e.g., Cardiology, ENT, Ophthalmology) and discovers verified nearby hospitals via live GPS.
+                    Receive structured suggestions on which clinical discipline to consult (e.g., Cardiology, ENT, Ophthalmology) and explore nearby healthcare facilities via OpenStreetMap and GPS.
                 </div>
             </div>
             <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid #166534; border-radius: 10px; padding: 18px 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.03);">
@@ -255,13 +255,13 @@ st.markdown(
         <div class="mg-equal-card">
             <div class="mg-card-header">📚 Evidence-Based RAG Protocols</div>
             <p class="mg-card-body">
-                Anchors AI recommendations in published reference guidelines from ICMR, WHO, and NICE. Explicitly cites medical protocol sources in every generated clinical dossier.
+                References clinical guidelines from ICMR, WHO, and NICE to provide clinical context. Displays cited protocol excerpts in every generated consultation dossier.
             </p>
         </div>
         <div class="mg-equal-card">
             <div class="mg-card-header">📍 Real-Time Facility Discovery (GPS)</div>
             <p class="mg-card-body">
-                Live OpenStreetMap and Overpass API integration with browser GPS. Discovers verified public hospitals, specialty clinics, and emergency centers anywhere across India.
+                Live OpenStreetMap and Overpass API integration with browser GPS. Discovers public hospitals, clinics, and emergency centers anywhere across India.
             </p>
         </div>
         <div class="mg-equal-card">
