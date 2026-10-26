@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.env
+
+# Streamlit secrets (NEVER commit live secrets)
+.streamlit/secrets.toml
+
+# SQLite local databases
+*.db
+*.sqlite
+*.sqlite3
+data/*.db
+tests/test_*.db
+
+# Testing and ML cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini
