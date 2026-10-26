@@ -243,7 +243,7 @@ class AIService:
                     backup_tag = " (+ Gemini Standby Armed)" if get_gemini_api_key() else ""
                     return {
                         "is_active": True,
-                        "status": f"Operational & Verified (200 OK){backup_tag}",
+                        "status": f"Connected (200 OK){backup_tag}",
                         "latency_ms": elapsed,
                         "engine_label": ENGINE_ACTIVE_LABEL
                     }
