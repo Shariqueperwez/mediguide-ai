@@ -148,7 +148,7 @@ st.markdown("---")
 # ==========================================
 st.markdown(
     """
-    <div style="background: linear-gradient(135deg, #f8fafc 0%, #f0fdfa 100%); border: 1px solid #ccfbf1; border-radius: 14px; padding: 24px 26px; margin: 18px 0 24px 0; box-shadow: 0 2px 8px rgba(13,148,136,0.04);">
+    <div class="mg-journey-box" style="background: linear-gradient(135deg, #f8fafc 0%, #f0fdfa 100%); border: 1px solid #ccfbf1; border-radius: 14px; padding: 22px 24px; margin: 18px 0 24px 0; box-shadow: 0 2px 8px rgba(13,148,136,0.04);">
         <div style="font-size: 1.22rem; font-weight: 800; color: #0f172a; margin-bottom: 6px;">
             💡 What is MediGuide AI &amp; How Does It Assist You?
         </div>
@@ -192,8 +192,8 @@ st.markdown(
 st.markdown("### 📚 How Clinical RAG (Retrieval-Augmented Generation) Operates")
 st.markdown(
     """
-    <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:22px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.03);">
-        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap:18px;">
+    <div class="mg-workflow-box" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:14px; padding:20px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.03);">
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:16px;">
             <div style="background:#ffffff; border:1px solid #cbd5e1; border-top:4px solid #0f766e; border-radius:10px; padding:16px;">
                 <div style="font-weight:800; color:#0f766e; font-size:0.96rem;">1️⃣ Symptom & Risk Intake</div>
                 <p style="font-size:0.85rem; color:#475569; margin-top:8px; line-height:1.5;">
@@ -283,38 +283,38 @@ st.markdown("---")
 st.markdown("### 🏥 Core Medical Specialties Covered")
 st.markdown(
     """
-    <div class="mg-specialty-grid" style="display:grid; grid-template-columns:repeat(4, 1fr); gap:10px; margin-bottom:22px;">
-        <div class="mg-specialty-pill" style="background:#f0fdfa; border:1.5px solid #99f6e4; border-radius:9999px; padding:8px 12px; display:flex; align-items:center; justify-content:center; gap:8px; box-sizing:border-box; width:100%; min-height:42px; text-align:center;">
-            <span class="mg-spec-icon" style="font-size:1.05rem; flex-shrink:0;">❤️</span>
-            <span class="mg-spec-text" style="font-size:0.82rem; font-weight:700; color:#0f766e; line-height:1.25;">Cardiology & Cardiac Surgery</span>
+    <div class="mg-specialty-grid">
+        <div class="mg-specialty-pill">
+            <span class="mg-spec-icon">❤️</span>
+            <span class="mg-spec-text">Cardiology &amp; Cardiac Surgery</span>
         </div>
-        <div class="mg-specialty-pill" style="background:#f0fdfa; border:1.5px solid #99f6e4; border-radius:9999px; padding:8px 12px; display:flex; align-items:center; justify-content:center; gap:8px; box-sizing:border-box; width:100%; min-height:42px; text-align:center;">
-            <span class="mg-spec-icon" style="font-size:1.05rem; flex-shrink:0;">👁️</span>
-            <span class="mg-spec-text" style="font-size:0.82rem; font-weight:700; color:#0f766e; line-height:1.25;">Ophthalmology (Eye Hospitals)</span>
+        <div class="mg-specialty-pill">
+            <span class="mg-spec-icon">👁️</span>
+            <span class="mg-spec-text">Ophthalmology (Eye Hospitals)</span>
         </div>
-        <div class="mg-specialty-pill" style="background:#f0fdfa; border:1.5px solid #99f6e4; border-radius:9999px; padding:8px 12px; display:flex; align-items:center; justify-content:center; gap:8px; box-sizing:border-box; width:100%; min-height:42px; text-align:center;">
-            <span class="mg-spec-icon" style="font-size:1.05rem; flex-shrink:0;">🫁</span>
-            <span class="mg-spec-text" style="font-size:0.82rem; font-weight:700; color:#0f766e; line-height:1.25;">Pulmonology & Respiratory Care</span>
+        <div class="mg-specialty-pill">
+            <span class="mg-spec-icon">🫁</span>
+            <span class="mg-spec-text">Pulmonology &amp; Respiratory Care</span>
         </div>
-        <div class="mg-specialty-pill" style="background:#f0fdfa; border:1.5px solid #99f6e4; border-radius:9999px; padding:8px 12px; display:flex; align-items:center; justify-content:center; gap:8px; box-sizing:border-box; width:100%; min-height:42px; text-align:center;">
-            <span class="mg-spec-icon" style="font-size:1.05rem; flex-shrink:0;">🦴</span>
-            <span class="mg-spec-text" style="font-size:0.82rem; font-weight:700; color:#0f766e; line-height:1.25;">Orthopedics & Trauma Surgery</span>
+        <div class="mg-specialty-pill">
+            <span class="mg-spec-icon">🦴</span>
+            <span class="mg-spec-text">Orthopedics &amp; Trauma Surgery</span>
         </div>
-        <div class="mg-specialty-pill" style="background:#f0fdfa; border:1.5px solid #99f6e4; border-radius:9999px; padding:8px 12px; display:flex; align-items:center; justify-content:center; gap:8px; box-sizing:border-box; width:100%; min-height:42px; text-align:center;">
-            <span class="mg-spec-icon" style="font-size:1.05rem; flex-shrink:0;">👶</span>
-            <span class="mg-spec-text" style="font-size:0.82rem; font-weight:700; color:#0f766e; line-height:1.25;">Pediatrics & Neonatology</span>
+        <div class="mg-specialty-pill">
+            <span class="mg-spec-icon">👶</span>
+            <span class="mg-spec-text">Pediatrics &amp; Neonatology</span>
         </div>
-        <div class="mg-specialty-pill" style="background:#f0fdfa; border:1.5px solid #99f6e4; border-radius:9999px; padding:8px 12px; display:flex; align-items:center; justify-content:center; gap:8px; box-sizing:border-box; width:100%; min-height:42px; text-align:center;">
-            <span class="mg-spec-icon" style="font-size:1.05rem; flex-shrink:0;">🦷</span>
-            <span class="mg-spec-text" style="font-size:0.82rem; font-weight:700; color:#0f766e; line-height:1.25;">Dentistry & Maxillofacial Care</span>
+        <div class="mg-specialty-pill">
+            <span class="mg-spec-icon">🦷</span>
+            <span class="mg-spec-text">Dentistry &amp; Maxillofacial Care</span>
         </div>
-        <div class="mg-specialty-pill" style="background:#f0fdfa; border:1.5px solid #99f6e4; border-radius:9999px; padding:8px 12px; display:flex; align-items:center; justify-content:center; gap:8px; box-sizing:border-box; width:100%; min-height:42px; text-align:center;">
-            <span class="mg-spec-icon" style="font-size:1.05rem; flex-shrink:0;">👂</span>
-            <span class="mg-spec-text" style="font-size:0.82rem; font-weight:700; color:#0f766e; line-height:1.25;">Otolaryngology (ENT Care)</span>
+        <div class="mg-specialty-pill">
+            <span class="mg-spec-icon">👂</span>
+            <span class="mg-spec-text">Otolaryngology (ENT Care)</span>
         </div>
-        <div class="mg-specialty-pill" style="background:#f0fdfa; border:1.5px solid #99f6e4; border-radius:9999px; padding:8px 12px; display:flex; align-items:center; justify-content:center; gap:8px; box-sizing:border-box; width:100%; min-height:42px; text-align:center;">
-            <span class="mg-spec-icon" style="font-size:1.05rem; flex-shrink:0;">🩺</span>
-            <span class="mg-spec-text" style="font-size:0.82rem; font-weight:700; color:#0f766e; line-height:1.25;">Internal Medicine & General Triage</span>
+        <div class="mg-specialty-pill">
+            <span class="mg-spec-icon">🩺</span>
+            <span class="mg-spec-text">Internal Medicine &amp; General Triage</span>
         </div>
     </div>
     """,
@@ -326,7 +326,7 @@ st.markdown(
 # ==========================================
 st.markdown(
     """
-    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px 26px; margin-top: 28px; margin-bottom: 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
+    <div class="mg-footer" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px 26px; margin-top: 28px; margin-bottom: 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
             <div>
                 <div style="font-weight: 800; font-size: 1.05rem; color: #0f172a; display: flex; align-items: center; gap: 8px;">
