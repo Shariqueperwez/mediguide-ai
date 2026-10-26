@@ -1,30 +1,58 @@
-# MediGuide AI — Intelligent Healthcare Assistance & Global Doctor Finder
+# MediGuide AI — Intelligent Clinical Triage & Care Navigation Platform
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![Streamlit Ready](https://img.shields.io/badge/streamlit-1.35+-FF4B4B.svg)](https://streamlit.io/)
-[![Clinical RAG](https://img.shields.io/badge/Architecture-RAG%20Clinical%20Grounding-0d9488.svg)](src/rag_engine.py)
+[![Streamlit Community Cloud](https://img.shields.io/badge/Streamlit-Cloud%20Ready-FF4B4B.svg)](https://streamlit.io/)
+[![Clinical RAG Grounding](https://img.shields.io/badge/Architecture-RAG%20Protocol%20Grounding-0d9488.svg)](src/rag_engine.py)
+[![Dual Neural Failover](https://img.shields.io/badge/AI%20Core-Groq%20%2B%20Gemini%20Failover-6366f1.svg)](src/ai_service.py)
+[![Mobile Responsive](https://img.shields.io/badge/UI-Mobile%20First%20Responsive-10b981.svg)](src/ui_components.py)
+[![Automated Tests](https://img.shields.io/badge/Tests-43%20Passing-brightgreen.svg)](tests/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-**MediGuide AI** is an enterprise-grade clinical decision-support and care navigation platform designed for local execution and deployment on **Streamlit Community Cloud**. It empowers users to describe health concerns in plain, natural language, screens critical safety red flags via an independent deterministic clinical engine, grounds medical advice in verified clinical guidelines (WHO, ICMR, NICE, CDC) using **Retrieval-Augmented Generation (RAG)**, stratifies patient risk by exact age (pediatric to geriatric), transparently matches complaints to medical specialties, and locates verified clinics and hospitals across tier-1, tier-2, and tier-3 cities (e.g. Muzaffarpur, Patna, Delhi, London, NYC) using OpenStreetMap geospatial services.
+**MediGuide AI** is an enterprise-grade clinical decision-support and care navigation platform built for seamless deployment on **Streamlit Community Cloud** and local execution. It empowers patients to articulate medical concerns in plain, natural conversational language, screens critical emergency red flags through an independent deterministic clinical engine, grounds recommendations in verified clinical protocols (**ICMR, WHO, NICE, CDC**) via **Retrieval-Augmented Generation (RAG)**, automatically persists consultation records into a private longitudinal Electronic Health Record (EHR) database, and navigates patients to verified nearby medical specialists and hospitals across metro and tier-2/3 cities using live OpenStreetMap geospatial services.
 
 ---
 
 ## 📌 Problem Statement
 
-Patients frequently turn to web search engines when experiencing symptoms, often encountering either sensationalized disease diagnoses or overwhelming medical jargon. Conversely, individuals experiencing genuine acute emergencies (such as atypical myocardial infarction in older adults or neonatal fever) may delay seeking emergency care due to uncertainty. 
+When experiencing acute or confusing symptoms, patients frequently turn to commercial search engines—often encountering either catastrophic disease diagnoses or dense clinical jargon. Conversely, individuals experiencing genuine medical emergencies (such as atypical myocardial infarction in older adults or neonatal fever in infants) often delay seeking urgent care due to uncertainty.
 
-**MediGuide AI** bridges this gap by acting as a **care navigation and safety triage assistant**—not a diagnostic tool. It enforces a strict dual-layer safety architecture that prioritizes life-safety instructions, clarifies missing medical details, recommends the right medical specialty, and helps patients locate verified nearby clinics and hospitals.
+**MediGuide AI** solves this critical gap by acting as a **care navigation and safety triage assistant**—not a diagnostic tool. It enforces a strict dual-layer safety architecture that prioritizes life safety, clarifies missing clinical information, recommends the correct medical specialty, and directs patients to verified local clinics and hospitals.
 
 ---
 
-## 🎯 Key Objectives & Recent Enhancements
+## 🌟 Key Features & Capabilities
 
-1. **Country & Regional Selection**: Choose your active country (India 🇮🇳, USA 🇺🇸, UK 🇬🇧, Canada 🇨🇦, Australia 🇦🇺, UAE 🇦🇪, etc.). The system automatically adapts localized emergency hotlines (112, 911, 999), state/city presets, and preferred languages.
-2. **Deep Age Stratification & Context**: Exact numeric age input (0 to 115) with automated stratification into **Neonate (<28 days)**, **Infant (<1 year)**, **Child**, **Adolescent**, **Adult**, and **Geriatric (65+)**, each triggering age-specific clinical rules (e.g., neonatal fever emergency, geriatric atypical acute delirium / silent MI).
-3. **Clinical RAG Protocol Grounding**: Retrieves relevant clinical evidence snippets from ICMR, WHO, NHS NICE, and CDC guidelines, injecting them into prompt context and displaying citations to users and recruiters.
-4. **Universal Doctor Finder (Tier 1, Tier 2, and Tier 3 Cities)**: Multi-strategy geospatial search using direct OpenStreetMap Nominatim facility queries, Overpass API mirrors, and verified regional directories. Seamlessly locates verified hospitals in cities like **Muzaffarpur (Bihar)**, **Patna**, **Bengaluru**, **London**, etc.
-5. **Multilingual Clinical Reports (PDF & Printable HTML)**: Download clinical summaries in **English**, **Hindi (हिन्दी)**, **Bengali (বাংলা)**, **Tamil (தமிழ்)**, **Telugu (తెలుగు)**, **Spanish (Español)**, or **French (Français)** with 100% Devanagari/Unicode fidelity.
-6. **Enterprise Brand Shield**: Zero raw vendor leaks. Displays professional enterprise branding (*"MediGuide Clinical Intelligence Engine"*) and includes a 1-click **Test Engine Connection** diagnostic ping.
+1. 📱 **Mobile-First Responsive Clinical UI**:
+   - Seamlessly responsive across smartphones (iOS Safari, Android Chrome), tablets, and widescreen desktop monitors.
+   - Symmetrical 4&times;2 specialty capsule matrix on desktop that gracefully auto-reflows into touch-friendly single-column cards on mobile viewports with zero horizontal overflow.
+
+2. 🛡️ **Dual-Layer Clinical Assessment**:
+   - **Layer 1 (Deterministic Safety Engine)**: Independent regex rule catalog screening emergency red flags (acute chest pain, stroke FAST, respiratory distress, neonatal fever `< 28 days`, anaphylaxis, uncontrolled hemorrhage) *before* any LLM invocation.
+   - **Layer 2 (Neural Care Guidance Core)**: High-speed clinical synthesis and doctor consultation preparation.
+
+3. ⚡ **Multi-Provider Neural Failover (Hot Standby)**:
+   - **Primary Engine**: Ultra-low-latency Groq Cloud (`llama-3.3-70b-versatile`).
+   - **Secondary Engine**: Google Gemini (`gemini-1.5-flash`) via direct REST API with JSON schema enforcement.
+   - **Tertiary Engine**: Deterministic offline clinical rules core.
+
+4. 📚 **Evidence-Based RAG Protocol Grounding**:
+   - Ingests and indexes verified clinical practice guidelines from the **Indian Council of Medical Research (ICMR)**, **World Health Organization (WHO)**, and **UK NICE**.
+   - Explicitly cites reference authorities and guideline protocols in every generated patient report.
+
+5. 🗂️ **Private Longitudinal Patient EHR & RBAC**:
+   - Mandatory patient intake validation (Full Name, Patient ID, Age, Gender, Blood Group).
+   - Consultations are **automatically persisted** to an SQLite database.
+   - Patients access their personal health records by unique Patient ID (`MG-2026-XXXX`).
+   - Hospital clinicians unlock the master patient registry via secure passkey authentication.
+
+6. 📍 **Universal Healthcare Provider Locator (Live GPS & Tier-1/2/3 Cities)**:
+   - Multi-strategy geospatial care discovery powered by OpenStreetMap Nominatim and Overpass API.
+   - Strict clinical specialty taxonomy matching (Cardiology, Ophthalmology, ENT, Pulmonology, Orthopedics, Pediatrics, Dentistry, Internal Medicine).
+   - Real facility discovery across global metros and Indian tier-2/3 cities (e.g. Muzaffarpur, Patna, Bengaluru, Delhi, Lucknow, Kolkata).
+
+7. 🌐 **Multilingual Doctor-Ready Clinical Dossiers**:
+   - Export structured clinical summaries in **English**, **Hindi (हिन्दी)**, **Bengali (বাংলা)**, **Tamil (தமிழ்)**, **Telugu (తెలుగు)**, **Spanish (Español)**, or **French (Français)**.
+   - Available in both downloadable PDF dossiers (ReportLab) and 100% Devanagari/Unicode-compliant printable HTML format.
 
 ---
 
@@ -32,37 +60,36 @@ Patients frequently turn to web search engines when experiencing symptoms, often
 
 ```mermaid
 flowchart TD
-    User([User / Patient]) --> CountrySel[Country & Region Selection]
-    CountrySel --> UI[Streamlit Multipage Interface]
-    
-    subgraph Frontend["User Interface Layer"]
-        UI --> P_Home[Home Page]
-        UI --> P_Symptom[1. Symptom Assistant & Exact Age]
-        UI --> P_Doctors[2. Find Doctors & Tier-2/3 Maps]
+    User([User / Patient]) --> MobileDesktop{Responsive Viewport}
+    MobileDesktop --> UI[Streamlit Multipage Interface]
+
+    subgraph Frontend["User Interface Layer (Mobile-First)"]
+        UI --> P_Home[app.py: Dashboard & Symmetrical Specialty Grid]
+        UI --> P_Symptom[1. Symptom Assistant & Mandatory Intake]
+        UI --> P_Doctors[2. Find Doctors & Live GPS Locator]
         UI --> P_History[3. Session History & Multilingual Export]
-        UI --> P_Analytics[4. Analytics Dashboard & RAG Metrics]
-        UI --> P_About[5. About, Safety & Ethics]
+        UI --> P_Portal[4. Patient Portal & Longitudinal EHR Dossier]
+        UI --> P_About[5. About, Clinical Safety & Ethics]
     end
 
     subgraph DualSafety["Dual-Layer Clinical Assessment"]
         P_Symptom --> SafetyEngine[Layer 1: Deterministic Safety Engine]
-        SafetyEngine -->|Emergency Red Flag Detected| TriageEmergency[🚨 Immediate Local Emergency Escalation]
-        SafetyEngine -->|Routine / Prompt Care| RAGEngine[Clinical RAG Retrieval Engine]
+        SafetyEngine -->|Emergency Red Flag Detected| TriageEmergency[🚨 Immediate Emergency Escalation: 112 / 108]
+        SafetyEngine -->|Routine / Urgent Care| RAGEngine[Clinical RAG Retrieval Engine]
         RAGEngine -->|Retrieve Guidelines: ICMR / WHO / NICE| AIService[Layer 2: AI Care Guidance Service]
-        AIService -->|API Key Present| NeuralCore[Clinical Neural Core]
-        AIService -->|No Key / Timeout| LocalDemo[Deterministic Clinical Rules Core]
-        NeuralCore --> PydanticVal[Pydantic Schema Validation]
+        AIService -->|Primary Key| GroqCore[Groq: LLaMA 3.3 70B]
+        AIService -->|Failover / Rate Limit| GeminiCore[Google Gemini 1.5 Flash]
+        AIService -->|Offline Fallback| LocalCore[Deterministic Clinical Core]
+        GroqCore --> PydanticVal[Pydantic Schema Validation]
+        GeminiCore --> PydanticVal
     end
 
-    subgraph CareNav["Navigation & Provider Layer"]
+    subgraph CareNav["Navigation, Storage & Export Layer"]
         PydanticVal --> SpecialtyRec[Specialty Recommender]
-        LocalDemo --> SpecialtyRec
         SpecialtyRec --> ProviderSearch[Geospatial Provider Search]
-        ProviderSearch --> Nominatim[OSM Nominatim Geocoder & Facility Search]
-        ProviderSearch --> Overpass[OSM Overpass Healthcare API]
-        ProviderSearch --> RegRegistry[Verified Regional Registry: Muzaffarpur, Patna, etc.]
-        P_Symptom --> DB[(SQLite Local DB)]
-        DB --> ReportGen[Multilingual PDF & HTML Report Generator]
+        ProviderSearch --> OSM[OpenStreetMap Nominatim & Overpass API]
+        P_Symptom --> SQLite[(SQLite EHR Persistence)]
+        SQLite --> ReportGen[Multilingual PDF & HTML Clinical Generator]
     end
 ```
 
@@ -72,144 +99,153 @@ flowchart TD
 
 | Component | Technology | Rationale |
 | :--- | :--- | :--- |
-| **Frontend & UI** | Streamlit 1.35+ | Interactive Python web application optimized for Streamlit Community Cloud |
-| **Clinical RAG** | Scikit-learn TF-IDF + Cosine Similarity | Grounds guidance in ICMR, WHO, NHS, and CDC protocols |
-| **LLM Inference** | Configurable Cloud API (`llama-3.3-70b-versatile`) | High-speed, low-latency clinical care navigation |
-| **Output Validation** | Pydantic v2 | Enforces strict JSON schemas and prevents hallucinations |
-| **Safety Engine** | Deterministic Regex & Rule Catalog | Independent safety screener for emergency red flags |
-| **Geospatial Search** | OpenStreetMap Nominatim + Overpass API | Real healthcare facility search across global and tier-2/3 cities |
-| **Distance Math** | Haversine Spherical Formula | Accurate surface distance calculations in kilometers |
-| **Database** | SQLite3 | Lightweight session storage with parameterized queries |
-| **Document Generation** | ReportLab + Responsive HTML | Programmatic PDF and Devanagari/Hindi printable summaries |
-| **Visual Analytics** | Plotly Express & Graph Objects | Dynamic charts and KPI cards for portfolio demonstrations |
-| **Automated Testing** | Pytest (43 passing tests) | Unit and integration test suite |
+| **Frontend & UI** | Streamlit 1.35+ & Responsive CSS3 | Multi-page clinical application with automatic mobile viewport reflow |
+| **Clinical RAG Engine** | Scikit-learn TF-IDF + Cosine Similarity | Real-time guideline matching against ICMR, WHO, and NICE protocols |
+| **Primary LLM** | Groq Cloud (`llama-3.3-70b-versatile`) | Sub-second inference latency for real-time symptom articulation |
+| **Backup LLM** | Google Gemini (`gemini-1.5-flash`) | Automatic hot-standby failover via structured JSON REST endpoint |
+| **Data Validation** | Pydantic v2 | Guarantees strict JSON schema conformance and eliminates hallucinated fields |
+| **Safety Screener** | Deterministic Regex Rule Catalog | High-speed, independent emergency red-flag screening |
+| **Geospatial Mapping** | OpenStreetMap Nominatim + Overpass API | Verified hospital and specialty clinic discovery with Haversine distance math |
+| **Data Persistence** | SQLite3 | Parameterized, migration-resilient consultation storage |
+| **Report Generation** | ReportLab + Responsive HTML5 | High-fidelity Devanagari/Hindi printable clinical summaries and PDF dossiers |
+| **Test Suite** | Pytest (43 Passing Tests) | Comprehensive automated test coverage across all modules |
 
 ---
 
-## 📂 Project Structure
+## 📂 Project Directory Structure
 
 ```
 mediguide-ai/
-├── app.py                      # Application landing page & care navigation portal
+├── app.py                      # Main landing page & care navigation portal
 ├── pages/
-│   ├── 1_Symptom_Assistant.py  # Exact age, RAG grounding & multilingual intake
-│   ├── 2_Find_Doctors.py       # Live OpenStreetMap & Overpass doctor & facility finder (GPS)
-│   ├── 3_Session_History.py    # Saved patient history & multilingual PDF/HTML export
-│   ├── 4_Patient_Portal.py     # Patient EHR portal, longitudinal timeline & RBAC clinician login
+│   ├── 1_Symptom_Assistant.py  # Patient intake, RAG assessment & auto-EHR save
+│   ├── 2_Find_Doctors.py       # Live OpenStreetMap & Overpass hospital locator (GPS)
+│   ├── 3_Session_History.py    # Consultation history & multilingual export
+│   ├── 4_Patient_Portal.py     # Longitudinal EHR dossier & RBAC clinician login
 │   └── 5_About_and_Safety.py   # Clinical ethics, RAG architecture & SaMD compliance
 ├── src/
 │   ├── __init__.py
+│   ├── ai_service.py           # Multi-provider neural engine (Groq -> Gemini -> Fallback)
 │   ├── auth.py                 # RBAC clinician authentication & patient privacy guard
-│   ├── config.py               # Emergency numbers, multi-model Groq LLM routing & branding
-│   ├── models.py               # Pydantic data schemas & demographic classifier
-│   ├── rag_engine.py           # Evidence-based RAG protocol retrieval engine (ICMR/WHO/NICE)
-│   ├── safety_engine.py        # Independent deterministic red-flag safety engine
-│   ├── symptom_parser.py       # Entity extraction & follow-up generator
-│   ├── specialty_recommender.py# Specialty mapping catalog
-│   ├── geocoding_service.py    # Nominatim geocoding & Haversine distance math
-│   ├── provider_search.py      # Multi-tier provider search & Overpass healthcare queries
+│   ├── config.py               # Emergency numbers, multi-provider API keys & branding
 │   ├── database.py             # SQLite persistence with auto-migration
+│   ├── geocoding_service.py    # Nominatim geocoding & Haversine distance calculation
+│   ├── models.py               # Pydantic data schemas & demographic classifier
+│   ├── provider_search.py      # Multi-tier provider search & Overpass healthcare queries
+│   ├── rag_engine.py           # Evidence-based RAG protocol retrieval engine
 │   ├── report_generator.py     # Multilingual PDF & HTML clinical dossier generator
-│   └── ui_components.py        # Custom CSS theme, badges & connection test
+│   ├── safety_engine.py        # Independent deterministic red-flag safety engine
+│   ├── specialty_recommender.py# Specialty mapping catalog
+│   ├── symptom_parser.py       # Entity extraction & follow-up generator
+│   └── ui_components.py        # Responsive CSS theme, mobile media queries & badges
 ├── ml/
-│   ├── __init__.py
 │   ├── train_model.py          # Care navigation classifier trainer
-│   ├── evaluate_model.py       # Precision, recall, F1, and confusion matrix
+│   ├── evaluate_model.py       # Precision, recall, F1 evaluation
 │   ├── predict.py              # ML inference helper
 │   └── saved_model.joblib      # Serialized ML pipeline artifacts
 ├── data/
-│   ├── README.md               # Synthetic dataset documentation
-│   ├── generate_data.py        # Benchmark vignette generator
+│   ├── generate_data.py        # Benchmark clinical vignette generator
 │   └── synthetic_demo_data.csv # 113 labeled clinical cases
 ├── tests/
-│   ├── __init__.py
 │   ├── test_auth.py            # RBAC authentication & role-isolation tests
-│   ├── test_safety_engine.py   # Emergency & non-emergency urgency tests
-│   ├── test_rag_engine.py      # Clinical RAG protocol retrieval tests
-│   ├── test_symptom_parser.py  # Entity & duration extraction tests
-│   ├── test_specialty_recommender.py # Specialty routing tests
+│   ├── test_database.py        # SQLite CRUD & auto-save tests
 │   ├── test_provider_search.py # Geospatial math & facility query tests
-│   ├── test_database.py        # SQLite CRUD tests
-│   └── test_report_generator.py# Multilingual report & AI fallback tests
+│   ├── test_rag_engine.py      # Clinical RAG protocol retrieval tests
+│   ├── test_report_generator.py# Multilingual report & AI fallback tests
+│   ├── test_safety_engine.py   # Emergency & non-emergency urgency tests
+│   ├── test_specialty_recommender.py # Specialty routing tests
+│   └── test_symptom_parser.py  # Entity & duration extraction tests
 ├── .streamlit/
 │   ├── config.toml             # Streamlit visual theme configuration
-├── .gitignore                  # Git repository exclusion rules
-├── requirements.txt            # Python dependencies
-└── README.md                   # Comprehensive project documentation
+│   └── secrets.toml.example    # Template for Streamlit Cloud secrets manager
+├── .env.example                # Template for local environment variables
+├── .gitignore                  # Git exclusion rules (protects API keys & database)
+├── LICENSE                     # MIT License
+├── README.md                   # Comprehensive project documentation
+└── requirements.txt            # Python dependencies
 ```
 
 ---
 
-## 🚀 Setup Instructions (Windows)
+## 🚀 Local Setup & Installation
 
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Shariqueperwez/mediguide-ai.git
+cd mediguide-ai
+```
+
+### 2. Create and Activate Virtual Environment
 ```powershell
-# 1. Navigate to the project directory
-cd d:\mediguide-ai
-
-# 2. Create Python virtual environment
+# Windows PowerShell
 python -m venv venv
-
-# 3. Activate the virtual environment
 .\venv\Scripts\Activate.ps1
+```
 
-# 4. Install dependencies
+### 3. Install Dependencies
+```powershell
 pip install -r requirements.txt
+```
 
-# 5. Launch the application
+### 4. Configure Environment Secrets
+Create a `.env` file in the project root (or `.streamlit/secrets.toml`):
+```toml
+# Primary fast inference provider (Free at https://console.groq.com/keys)
+GROQ_API_KEY="gsk_your_groq_api_key_here"
+
+# Optional secondary backup provider (Free at https://aistudio.google.com/app/apikey)
+GEMINI_API_KEY="AIzaSy_your_gemini_api_key_here"
+```
+
+### 5. Launch the Application
+```powershell
 streamlit run app.py
 ```
 Open your browser to `http://localhost:8501`.
 
 ---
 
-## 🧪 Running Automated Tests
+## 🧪 Automated Testing
 
-Run the complete 43-test test suite:
+Run the full automated test suite:
 ```powershell
 python -m pytest tests -v
 ```
 
-All 43 tests execute and pass cleanly, verifying:
-- RBAC role-based isolation, clinician authentication, and patient session separation.
-- Safety engine deterministic red-flag detection (chest pain, stroke FAST, dyspnea, anaphylaxis, hemorrhage, neonatal fever, severe abdomen).
-- Evidence-based RAG retrieval over ICMR, WHO, NICE, and CDC protocols.
+**All 43 tests pass cleanly**, validating:
+- Role-based clinician authentication and patient session privacy.
+- Deterministic emergency red-flag detection (chest pain, stroke FAST, dyspnea, anaphylaxis, hemorrhage, neonatal fever).
+- Evidence-based RAG retrieval over ICMR, WHO, and NICE clinical guidelines.
 - Multi-tier OpenStreetMap provider search, Haversine distance math, and strict radius filters.
-- Parameterized SQLite session persistence.
-- Multilingual PDF and HTML report generation.
+- Automatic SQLite session persistence and EHR dossier retrieval.
+- Multilingual PDF and Devanagari/Hindi HTML report generation.
 
 ---
 
-## 🌐 Streamlit Community Cloud Deployment
+## ☁️ Deploying on Streamlit Community Cloud
 
-1. **Push to GitHub**:
-   ```bash
-   cd d:\mediguide-ai
-   git init
-   git add .
-   git commit -m "feat: complete MediGuide AI with RAG, country selection, and multilingual reports"
-   git branch -M main
-   git remote add origin https://github.com/your-username/mediguide-ai.git
-   git push -u origin main
+1. Push your repository to GitHub: `https://github.com/Shariqueperwez/mediguide-ai`
+2. Navigate to [share.streamlit.io](https://share.streamlit.io/) and log in with your GitHub account.
+3. Click **"New app"**, select your repository, branch `main`, and main file path `app.py`.
+4. Click **Advanced settings > Secrets**, and paste your API keys:
+   ```toml
+   GROQ_API_KEY = "gsk_your_groq_api_key_here"
+
+   # Optional hot-standby failover
+   GEMINI_API_KEY = "AIzaSy_your_gemini_api_key_here"
    ```
-
-2. **Deploy on Streamlit Community Cloud**:
-   - Go to [share.streamlit.io](https://share.streamlit.io/).
-   - Click **"New app"**, select your repository, and set **Main file path** to `app.py`.
-   - Under **Advanced settings > Secrets**, paste the keys from `.streamlit/secrets.toml.example`:
-     ```toml
-     # Primary fast inference provider
-     GROQ_API_KEY = "gsk_your_actual_groq_api_key_here"
-
-     # Optional hot-standby backup provider (automatic failover)
-     GEMINI_API_KEY = "AIzaSy_your_gemini_api_key_here"
-     ```
-   - Click **"Deploy!"**.
+5. Click **Deploy!** Your app will be live with full SSL in seconds.
 
 ---
 
-## ⚖️ Limitations & Responsible AI Notice
-- **Health Information, Not Diagnosis**: MediGuide AI is designed strictly for health education and care navigation. It does not provide medical diagnoses or prescribe medications.
-- **Emergency Priority**: In acute life-threatening situations, patients must immediately contact local emergency services (**112 in India**, **911 in the US**, **999 in the UK**).
-- **Clinical Validation Requirement**: Real-world bedside deployment requires formal validation trials, institutional review board (IRB) approval, and regulatory clearance under SaMD guidelines (such as CDSCO or FDA 510(k)).
+## ⚖️ Responsible AI & Clinical Disclaimer
+
+- **Care Navigation, Not Diagnosis**: MediGuide AI is designed strictly for health education, symptom articulation, and care navigation. It does not establish definitive medical diagnoses or prescribe medications.
+- **Emergency Situations**: In acute life-threatening situations, patients must immediately contact emergency medical services (**112 / 108 in India**, **911 in the US**, **999 in the UK**).
+- **Clinical Governance**: Any hospital deployment requires formal institutional review board (IRB) approval, clinical validation trials, and SaMD regulatory clearance (CDSCO / FDA).
 
 ---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE) — see the LICENSE file for details.
