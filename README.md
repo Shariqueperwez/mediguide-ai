@@ -22,7 +22,7 @@
   <b>Sub-Second AI Clinical Triage</b> • <b>Deterministic 112 / 108 Emergency Overrides</b> • <b>ICMR Guideline RAG</b> • <b>Live GPS Indian Hospital Locator</b>
 </p>
 
-[🌟 Overview](#-overview--clinical-rationale-india) • [🎮 Indian Clinical Scenarios](#-interactive-clinical-scenarios) • [🛡️ Safety Architecture](#-dual-layer-safety-architecture) • [📱 Platform Modules](#-platform-modules--pages) • [⚡ Quick Start](#-quick-start) • [☁️ Deployment](#-streamlit-cloud-deployment) • [⚖️ Governance](#-clinical-governance--disclaimer)
+[🌟 Overview](#-overview--clinical-rationale-india) • [🎮 Indian Clinical Scenarios](#-interactive-clinical-scenarios) • [🛡️ Safety Architecture](#-dual-layer-safety-architecture) • [📱 Platform Modules](#-platform-modules--pages) • [⚡ Quick Start](#-quick-start)
 
 ---
 
