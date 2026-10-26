@@ -45,8 +45,8 @@ country_code = country_cfg.get("code", "in")
 # Page Header
 st.title("📍 Find Nearby Healthcare Providers (India)")
 st.markdown(
-    f"Search for verified hospitals, specialized clinics, and medical doctors across **India**. "
-    f"Powered by real OpenStreetMap geospatial data and National Healthcare Registries."
+    f"Search for hospitals, specialized clinics, and medical doctors across **India**. "
+    f"Powered by OpenStreetMap geospatial data and curated regional facility directories."
 )
 
 # ==========================================
@@ -556,7 +556,7 @@ if location_query:
                                     <div style="font-size:0.82rem; margin-top:4px;">{web_html}</div>
                                     {directions_btn}
                                     <div style="font-size:0.72rem; color:#94a3b8; margin-top:10px; border-top:1px solid #f1f5f9; padding-top:6px;">
-                                        Source: {p.data_source} • { 'Verified Health Registry' if p.is_verified else 'OpenStreetMap Node' }
+                                        Source: {p.data_source} • { 'Curated Regional Registry' if p.is_verified else 'OpenStreetMap Community Node' }
                                     </div>
                                 </div>
                                 """,
