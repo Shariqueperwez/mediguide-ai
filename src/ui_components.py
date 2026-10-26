@@ -385,6 +385,118 @@ section[data-testid="stSidebar"] {
     text-transform: uppercase;
     letter-spacing: 0.04em;
 }
+
+/* =========================================================
+   📱 COMPREHENSIVE RESPONSIVE MOBILE STYLING (< 768px)
+   ========================================================= */
+@media (max-width: 768px) {
+    /* Allow Streamlit horizontal blocks to wrap cleanly on mobile */
+    div[data-testid="stHorizontalBlock"] {
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+    }
+
+    /* Stack or expand columns on mobile viewports */
+    div[data-testid="column"] {
+        min-width: 100% !important;
+        width: 100% !important;
+        flex: 1 1 100% !important;
+        margin-bottom: 6px !important;
+    }
+
+    /* Main view container: eliminate excessive margin on mobile screens */
+    .block-container {
+        padding-left: 0.85rem !important;
+        padding-right: 0.85rem !important;
+        padding-top: 1.0rem !important;
+        padding-bottom: 2.0rem !important;
+        max-width: 100vw !important;
+    }
+
+    /* Prevent horizontal page shifts & off-screen scrollbars */
+    html, body, [data-testid="stAppViewContainer"], .main {
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+    }
+
+    /* Executive Hero: Clean vertical stack */
+    .mg-hero-compact {
+        padding: 14px 16px !important;
+        margin-bottom: 14px !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px !important;
+    }
+
+    .mg-hero-compact-title {
+        font-size: 1.25rem !important;
+        line-height: 1.25 !important;
+    }
+
+    .mg-hero-compact-desc {
+        font-size: 0.85rem !important;
+    }
+
+    .mg-hero-compact-right {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+    }
+
+    .mg-compact-stat {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 8px 12px !important;
+    }
+
+    /* Feature Grid & Capability Cards */
+    .mg-feature-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    .mg-equal-card {
+        min-height: auto !important;
+        padding: 16px !important;
+    }
+
+    /* Specialty Grid: Single-column clean capsule buttons on smartphones */
+    .mg-specialty-grid {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+        margin-bottom: 18px !important;
+    }
+
+    .mg-specialty-pill {
+        width: 100% !important;
+        min-height: 44px !important;
+        padding: 10px 14px !important;
+        justify-content: flex-start !important;
+        text-align: left !important;
+        border-radius: 12px !important;
+    }
+
+    .mg-spec-text {
+        font-size: 0.88rem !important;
+        white-space: normal !important;
+        word-break: break-word !important;
+    }
+
+    /* Responsive Footer & Section Boxes */
+    .mg-footer {
+        padding: 16px 14px !important;
+    }
+
+    .mg-journey-box, .mg-workflow-box {
+        padding: 16px 14px !important;
+    }
+
+    /* Touch-friendly buttons on mobile */
+    .stButton > button {
+        min-height: 42px !important;
+    }
+}
 </style>
 """
 
