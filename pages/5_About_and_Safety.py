@@ -55,7 +55,7 @@ with tab1:
         #### What MediGuide AI IS NOT:
         - ❌ **NOT a Diagnostic Device**: It does not establish clinical diagnoses or disease certainty.
         - ❌ **NOT an e-Prescription System**: It never recommends prescription drug dosages or modifications.
-        - ❌ **NOT an Automatic Emergency Dispatcher**: It does not contact 112/911 automatically; patients must call.
+        - ❌ **NOT an Automatic Emergency Dispatcher**: It does not contact emergency services (112 / 108) automatically; patients or family must call.
         - ❌ **NOT a Substitute for Clinical Judgment**: Every assessment explicitly states that a licensed physician must be consulted.
         """
     )
