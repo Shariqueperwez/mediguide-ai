@@ -1,23 +1,28 @@
 <div align="center">
 
 # 🩺 MediGuide AI
-### Intelligent Clinical Triage & Geospatial Care Navigation
+### *National Healthcare Triage & Clinical Navigation Platform (India Edition)*
 
-*A safety-first clinical decision-support prototype bridging patient symptom articulation, guideline-grounded care navigation, and nearby healthcare discovery.*
+*An intelligent, safety-first clinical decision-support and care navigation platform configured for India's national healthcare ecosystem—bridging patient symptom articulation, ICMR guideline-grounded care navigation, and nearby hospital discovery.*
 
 <br/>
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/)
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-0d9488?style=flat-square)](LICENSE)
-[![Tests Passing](https://img.shields.io/badge/Pytest-43%20Passed-10b981?style=flat-square&logo=pytest&logoColor=white)](tests/)
+[![Edition](https://img.shields.io/badge/Edition-India%20National%20Care-0d9488?style=flat-square)](https://github.com/Shariqueperwez/mediguide-ai)
+[![Emergency Hotlines](https://img.shields.io/badge/Emergency-112%20%7C%20108%20Ambulance-ef4444?style=flat-square)](https://112.gov.in/)
+[![Clinical RAG](https://img.shields.io/badge/Guidelines-ICMR%20%7C%20WHO%20SEARO-10b981?style=flat-square)](src/rag_engine.py)
 [![AI Providers](https://img.shields.io/badge/AI%20Core-Groq%20%7C%20Gemini%20Failover-6366f1?style=flat-square)](src/ai_service.py)
-[![Geospatial](https://img.shields.io/badge/Mapping-OpenStreetMap%20%2B%20GPS-7EBC6F?style=flat-square&logo=openstreetmap&logoColor=white)](https://www.openstreetmap.org/)
-[![Mobile Responsive](https://img.shields.io/badge/Design-Mobile%20First%20Responsive-0284c7?style=flat-square)](src/ui_components.py)
+[![Geospatial](https://img.shields.io/badge/Mapping-OpenStreetMap%20India-7EBC6F?style=flat-square&logo=openstreetmap&logoColor=white)](https://www.openstreetmap.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-0f766e?style=flat-square)](LICENSE)
 
 <br/>
 
-[🌟 Overview](#-overview--clinical-rationale) • [🎮 Clinical Scenarios](#-interactive-clinical-scenarios) • [🛡️ Safety Architecture](#-dual-layer-safety-architecture) • [📱 Platform Modules](#-platform-modules--pages) • [⚡ Quick Start](#-quick-start) • [☁️ Deployment](#-streamlit-cloud-deployment) • [⚖️ Ethics](#-clinical-governance--disclaimer)
+<p align="center">
+  <b>Sub-Second AI Clinical Triage</b> • <b>Deterministic 112 / 108 Emergency Overrides</b> • <b>ICMR Guideline RAG</b> • <b>Live GPS Indian Hospital Locator</b>
+</p>
+
+[🌟 Overview](#-overview--clinical-rationale-india) • [🎮 Indian Clinical Scenarios](#-interactive-clinical-scenarios) • [🛡️ Safety Architecture](#-dual-layer-safety-architecture) • [📱 Platform Modules](#-platform-modules--pages) • [⚡ Quick Start](#-quick-start) • [☁️ Deployment](#-streamlit-cloud-deployment) • [⚖️ Governance](#-clinical-governance--disclaimer)
 
 ---
 
@@ -25,22 +30,23 @@
 
 <br/>
 
-## 🌟 Overview & Clinical Rationale
+## 🌟 Overview & Clinical Rationale (India)
 
-When individuals experience acute or unfamiliar symptoms, they frequently consult generic search engines. This often produces two dangerous extremes:
-1. **Catastrophizing & Panic**: Minor benign symptoms are misinterpreted as severe life-threatening illnesses.
-2. **Delayed Emergency Response**: Genuine acute crises (such as atypical acute myocardial infarction in older adults or neonatal fever in infants under 28 days) are downplayed, delaying urgent emergency room arrival.
+Navigating healthcare in India presents unique challenges:
+1. **Primary vs. Tertiary Care Overcrowding**: Large public institutions (such as AIIMS, Safdarjung, and regional medical colleges) are routinely overburdened by patients presenting with non-emergent complaints simply because they lack clarity on which specialist or local clinic to consult.
+2. **Delayed Emergency Response**: Patients experiencing genuine acute emergencies (such as atypical heart attacks in elderly patients, severe pediatric respiratory distress, or neonatal fever under 28 days) often delay calling government ambulances (**108 / 102**) due to diagnostic uncertainty or internet searches.
 
-**MediGuide AI** is an open-source clinical decision-support and care navigation platform designed to provide a safe, structured, and responsible alternative. It enforces a strict **Dual-Layer Architecture**:
-- **Layer 1 (Independent Deterministic Safety Engine)**: Evaluates hard-coded clinical red flags *before* any language model invocation, prioritizing life-safety hotlines (112 / 108 in India).
-- **Layer 2 (Guideline-Referenced Neural Core)**: Ingests clinical guideline excerpts (**ICMR**, **WHO**, **NICE**) via **Retrieval-Augmented Generation (RAG)** to provide structured, educational, doctor-ready consultation preparation reports.
-- **Geospatial Care Discovery**: Connects patients with appropriate medical specialties and maps nearby healthcare facilities using live OpenStreetMap and device GPS data.
+**MediGuide AI (India Clinical Edition)** acts as a **care navigation and safety triage assistant** built specifically for India:
+- **Deterministic Emergency Guard**: Instantly screens critical red flags and provides direct instructions to call **112 (National Emergency)** or **108 (State Ambulance Service)**.
+- **ICMR Guideline-Referenced RAG**: Augments advice using clinical practice protocols from the **Indian Council of Medical Research (ICMR)** and the **World Health Organization (WHO South-East Asia Region)**.
+- **Indian Language Support**: Generates doctor-ready consultation dossiers in **Hindi (हिन्दी)**, **Bengali (বাংলা)**, **Tamil (தமிழ்)**, **Telugu (తెలుగు)**, and **English**.
+- **Geospatial Discovery Across Metros & Tier-2/3 Cities**: Maps verified hospitals and clinics across Delhi/NCR, Mumbai, Bengaluru, Patna, Muzaffarpur, Lucknow, Hyderabad, and Kolkata via OpenStreetMap and device GPS.
 
 ---
 
 ## 🎮 Interactive Clinical Scenarios
 
-MediGuide AI includes 1-click clinical evaluation presets to demonstrate its dual-layer safety behavior:
+MediGuide AI includes 1-click clinical evaluation presets reflecting typical cases encountered in Indian healthcare settings:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -50,17 +56,18 @@ MediGuide AI includes 1-click clinical evaluation presets to demonstrate its dua
 │    PRESSURE & SWEATING       │    (NEONATAL / PEDIATRIC)    │    & SEVERE OCULAR PAIN          │
 ├──────────────────────────────┼──────────────────────────────┼───────────────────────────────────┤
 │ Patient: Rajesh Kumar (52y)  │ Patient: Baby Aarav (2 mo)   │ Patient: Ananya Verma (28y)       │
+│ Location: Patna, Bihar       │ Location: Muzaffarpur, Bihar │ Location: New Delhi / NCR         │
 │ Input: "Crushing chest pain  │ Input: "Fever of 101F, weak  │ Input: "Severe right eye redness, │
 │ radiating to left arm..."    │ cry, refusing to feed..."    │ blurred vision, light pain..."    │
 ├──────────────────────────────┼──────────────────────────────┼───────────────────────────────────┤
 │ ⚡ Engine Behavior:           │ ⚡ Engine Behavior:           │ ⚡ Engine Behavior:                │
 │ • Layer 1 Safety Triggered   │ • Pediatric Age Override     │ • Layer 1 Red Flags Cleared       │
-│ • Deterministic Intercept    │ • Urgent Clinical Alert      │ • RAG Matches ICMR Guidelines     │
+│ • Deterministic Intercept    │ • Urgent Clinical Alert      │ • RAG Matches ICMR Eye Protocols  │
 │ • Bypasses AI Generation     │ • Neonatal Protocol Active   │ • Specialty: Ophthalmology        │
 ├──────────────────────────────┼──────────────────────────────┼───────────────────────────────────┤
 │ 📋 Output Action:            │ 📋 Output Action:            │ 📋 Output Action:                 │
 │ 🚨 EMERGENCY: Dial 112 / 108 │ ⚠️ URGENT: Immediate doctor  │ 🩺 ROUTINE: Doctor-Ready Summary  │
-│ Immediate ambulance dispatch │ evaluation within 2-4 hours  │ 📍 Maps nearby Eye Care Centers   │
+│ Immediate ambulance dispatch │ evaluation within 2-4 hours  │ 📍 Maps nearby Eye Hospitals      │
 └──────────────────────────────┴──────────────────────────────┴───────────────────────────────────┘
 ```
 
@@ -68,17 +75,17 @@ MediGuide AI includes 1-click clinical evaluation presets to demonstrate its dua
 
 ## 🛡️ Dual-Layer Safety Architecture
 
-To prioritize patient safety and mitigate language model hallucinations, MediGuide AI decouples safety evaluation from text generation:
+To prioritize patient safety, eliminate AI hallucinations, and strictly comply with medical governance in India:
 
 ```mermaid
 flowchart TD
-    A[👤 Patient Intake Form<br/>Name, Age, Duration, Severity, Symptoms] --> B{Layer 1: Deterministic Safety Engine}
+    A[👤 Patient Intake Form<br/>Name, Age, Gender, Blood Group, Symptoms] --> B{Layer 1: Deterministic Safety Engine}
     
-    B -->|🚨 Red Flag Triggered| C[EMERGENCY ESCALATION<br/>Immediate 112 / 108 Hotline Override<br/>Bypasses LLM Generation]
+    B -->|🚨 Red Flag Triggered| C[🚨 EMERGENCY INTERCEPT<br/>Immediate 112 / 108 Ambulance Hotline Override<br/>Bypasses AI Generation]
     
-    B -->|✅ No Immediate Red Flag| D[Layer 2: Clinical RAG Protocol Grounding]
+    B -->|✅ No Emergency Red Flag| D[Layer 2: Clinical RAG Protocol Grounding]
     
-    D -->|TF-IDF Semantic Matching| E[Clinical Guidelines Base<br/>ICMR • WHO • NICE Protocols]
+    D -->|TF-IDF Semantic Matching| E[Indian Clinical Guidelines Base<br/>ICMR Guidelines • WHO SEARO Protocols]
     E -->|Context Injection| F{Neural Core Failover}
     
     F -->|Primary| G[Groq Cloud: LLaMA 3.3 70B]
@@ -90,28 +97,28 @@ flowchart TD
     I --> J
     
     J --> K[Automatic SQLite EHR Persistence]
-    J --> L[Geospatial Provider Discovery<br/>OpenStreetMap & GPS]
-    J --> M[Multilingual Dossier Export<br/>PDF & Devanagari HTML]
+    J --> L[Geospatial Provider Discovery<br/>OpenStreetMap India & Live GPS]
+    J --> M[Indian Multilingual Dossier Export<br/>PDF & Devanagari Hindi / Regional HTML]
 ```
 
-### 1. Layer 1: Deterministic Red-Flag Catalog
-Executes in under **5 milliseconds** using clinical regex patterns grounded in NHS 111, Manchester Triage System, and WHO emergency guidelines:
-- **Cardiovascular**: Crushing substernal chest pressure, radiation to left arm/jaw, diaphoresis.
-- **Neurological**: Stroke FAST signs (facial drooping, unilateral arm weakness, slurred speech).
-- **Respiratory**: Severe dyspnea, stridor, cyanosis, inability to complete sentences.
-- **Pediatric & Neonatal**: Fever in neonates (`< 28 days`), lethargy, weak high-pitched cry, sunken fontanelle.
-- **Obstetric**: Third-trimester bleeding, severe persistent epigastric pain with visual aura.
+### 1. Layer 1: Deterministic Indian Emergency Red-Flag Screener
+Executes in under **5 milliseconds** using clinical regex patterns grounded in emergency triage protocols:
+- **Cardiovascular**: Crushing chest pressure, radiating arm pain, cold sweats &rarr; **Immediate 112 / 108 ambulance referral**.
+- **Neurological**: Stroke FAST signs (unilateral facial drooping, arm drift, dysarthria).
+- **Respiratory**: Severe dyspnea, acute asthma, stridor, inability to speak full sentences.
+- **Pediatric & Neonatal**: Fever in neonates (`< 28 days`), lethargy, weak high-pitched cry, refusing feeds.
+- **Obstetric**: Third-trimester bleeding, severe epigastric pain with visual aura.
 
-### 2. Layer 2: Evidence-Referenced RAG
-- Pre-indexes official clinical practice guidelines from the **Indian Council of Medical Research (ICMR)**, **World Health Organization (WHO)**, and **UK NICE**.
-- Retrieves relevant protocol excerpts based on symptom taxonomy.
-- Injects guidelines into the model's system prompt context at a deterministic temperature (`0.2`).
-- Discloses the exact retrieved clinical authority, title, and excerpt directly on the patient's assessment screen.
+### 2. Layer 2: ICMR Guideline-Referenced RAG
+- Indexes official clinical practice guidelines from the **Indian Council of Medical Research (ICMR)** and the **World Health Organization (WHO SEARO)**.
+- Semantically retrieves protocol excerpts based on extracted symptom entities.
+- Injects guidelines into prompt context at low temperature (`0.2`) to prevent creative drift.
+- Cites the specific guideline authority and protocol title directly on the patient's assessment screen.
 
 ### 3. Layer 3: Multi-Provider Neural Failover
 - **Primary Engine**: Groq Cloud (`llama-3.3-70b-versatile`) delivering rapid response times.
 - **Hot-Standby Backup**: Google Gemini (`gemini-1.5-flash`) via direct REST endpoint with native JSON schema enforcement.
-- **Zero Vendor Leaking**: Shielded under an enterprise brand abstraction (*"MediGuide Clinical Intelligence Engine"*).
+- **Enterprise Brand Abstraction**: Shielded under *"MediGuide Clinical Intelligence Engine"*.
 
 ---
 
@@ -120,46 +127,59 @@ Executes in under **5 milliseconds** using clinical regex patterns grounded in N
 MediGuide AI is structured into 5 dedicated healthcare portals:
 
 ### 1. 🩺 Intelligent Clinical Symptom Assistant (`1_Symptom_Assistant.py`)
-- **Mandatory Intake Validation**: Requires Patient Full Name, Patient ID, Age, Gender, and detailed symptoms before running evaluation.
+- **Mandatory Patient Registration**: Requires Patient Full Name, Patient ID, Age, Gender, and Blood Group before triage.
 - **Age Stratification**: Evaluates numeric ages (0–115) into Neonate, Infant, Child, Adolescent, Adult, and Geriatric profiles.
-- **Automatic EHR Persistence**: Assessments are automatically committed to the local SQLite database upon completion—no records are lost if the patient navigates away.
-- **Multilingual Clinical Export**: Generates physician-ready consultation reports in **English**, **Hindi (हिन्दी)**, **Bengali (বাংলা)**, **Tamil (தமிழ்)**, **Telugu (తెలుగు)**, **Spanish (Español)**, and **French (Français)** in both PDF and printable HTML formats.
+- **Automatic EHR Persistence**: Assessments are automatically saved to SQLite upon completion—no records are lost when navigating.
+- **Multilingual Clinical Export**: Generates physician-ready consultation reports in **English**, **Hindi (हिन्दी)**, **Bengali (বাংলা)**, **Tamil (தமிழ்)**, and **Telugu (తెలుగు)** with 100% Devanagari/Unicode fidelity in both PDF and printable HTML formats.
 
 ### 2. 📍 Geospatial Healthcare Provider Discovery (`2_Find_Doctors.py`)
-- **Live HTML5 Hardware GPS**: Detects user device coordinates with fallback to city landmark search.
+- **Live Hardware GPS**: Detects user device coordinates with dynamic anchors across all major Indian cities.
 - **Clinical Triage Routing**: Automatically pre-filters recommended specialties when arriving directly from a symptom evaluation.
-- **OpenStreetMap & Overpass Integration**: Live queries for public hospitals, specialized clinics, and pharmacies.
-- **Strict Haversine Radius Enforcement**: Enforces an exact distance boundary (1–35 km) with direct Google Maps turn-by-turn directions.
-- **Curated Regional Fallback**: Pre-indexed regional directories ensuring reliable results in Tier-2/3 Indian medical hubs (e.g. Muzaffarpur, Patna, Lucknow).
+- **OpenStreetMap & Overpass Integration**: Live queries for public hospitals, specialized clinics, and pharmacies across India.
+- **Strict Haversine Distance Filter**: Enforces exact radius limits (1–35 km) with direct Google Maps turn-by-turn navigation.
+- **Curated Regional Fallback**: Pre-indexed regional directories ensuring reliable hospital discovery in Tier-2/3 hubs (e.g. Muzaffarpur, Patna, Lucknow, Varanasi, Ranchi).
 
 ### 3. 📂 Patient Consultation History (`3_Session_History.py`)
-- **Role-Based Separation**: Patients access only records linked to their specific Patient ID.
-- **Audit Trails**: Clinical staff can review historical triage severity distribution and export master consultation logs as CSV.
+- **Role-Based Privacy**: Patients access only records linked to their specific Patient ID (`MG-2026-XXXX`).
+- **Hospital Audit**: Clinicians can review historical triage records and export master logs as CSV.
 
 ### 4. 🗂️ Longitudinal Patient Health Portal (`4_Patient_Portal.py`)
-- **EHR Record Lookup**: Patients track their longitudinal medical timeline across repeat assessments.
-- **Consolidated Health Dossier**: Compiles all historical visits, symptom evolutions, and provider referrals into a single printable record.
+- **EHR Record Tracking**: Patients track their longitudinal medical timeline across repeat assessments.
+- **Consolidated Health Dossier**: Compiles historical visits, symptom progressions, and provider referrals into a single printable report.
 - **Clinician Master Access**: Passkey-protected administrative mode for hospital physicians.
 
 ### 5. 🛡️ Clinical Safety & Governance Documentation (`5_About_and_Safety.py`)
-- In-depth documentation of clinical boundaries, RAG architecture, ethics, and SaMD regulatory alignment.
+- Detailed documentation on clinical boundaries, RAG architecture, ethics, and DISHA compliance alignment.
+
+---
+
+## 🇮🇳 Major Indian Healthcare Hubs Supported
+
+MediGuide AI includes pre-calibrated district hubs and live GPS discovery across:
+- **Delhi / NCR**: AIIMS Ansari Nagar, Safdarjung, Saket Medical Corridor, Sir Ganga Ram, Rohini.
+- **Mumbai MMR**: KEM Hospital, Tata Memorial, Lilavati Bandra, Hinduja Mahim, Bombay Hospital.
+- **Bengaluru**: NIMHANS, Victoria Hospital, Manipal Old Airport Rd, Narayana Health.
+- **Patna & Bihar**: AIIMS Patna, PMCH, IGIMS Sheikhpura, Ruban Memorial, Paras HMRI.
+- **Muzaffarpur**: SKMCH Medical College, Sadar Hospital, Prashant Memorial, Juran Chapra Hub.
+- **Kolkata, Lucknow, Hyderabad, Pune, Chennai, Ahmedabad**.
 
 ---
 
 ## 💻 Tech Stack & Benchmarks
 
-| Layer | Technology | Function | Performance Target |
-| :--- | :--- | :--- | :--- |
-| **Frontend UI** | Streamlit 1.35+ & Responsive CSS3 | Mobile-first responsive clinical interface | Zero horizontal overflow |
-| **Safety Engine** | Deterministic Regex Rule Catalog | Emergency red-flag interceptor | `< 5 ms` execution |
-| **Clinical RAG** | Scikit-learn TF-IDF Vectorizer | Protocol guideline retrieval (ICMR/WHO) | `< 25 ms` retrieval |
-| **Primary LLM** | Groq Cloud (`llama-3.3-70b-versatile`) | Fast clinical symptom synthesis | Low-latency inference |
-| **Backup LLM** | Google Gemini (`gemini-1.5-flash`) | Automated secondary neural failover | Seamless hot-standby |
-| **Schema Validation**| Pydantic v2 | JSON contract enforcement | 100% schema validity |
-| **Geospatial Engine**| OpenStreetMap Overpass & Nominatim | Healthcare facility queries | Real-time map discovery |
-| **Distance Math** | Haversine Spherical Formula | Surface proximity calculations | Guaranteed `≤ radius` |
-| **Persistence** | SQLite3 (Thread-Safe) | Longitudinal patient record storage | Parameterized SQL |
-| **Document Engine** | ReportLab + Responsive HTML5 | Multilingual clinical summary export | Unicode Devanagari fidelity |
+| Component | Technology | Rationale for India Deployment |
+| :--- | :--- | :--- |
+| **Frontend UI** | Streamlit 1.35+ & Responsive CSS3 | Mobile-first responsive clinical interface optimized for smartphones |
+| **Safety Engine** | Deterministic Regex Rule Catalog | Emergency red-flag interceptor (`< 5 ms`) prioritizing **112 / 108** |
+| **Clinical RAG** | Scikit-learn TF-IDF Vectorizer | Protocol guideline retrieval over **ICMR** & **WHO SEARO** documents |
+| **Primary LLM** | Groq Cloud (`llama-3.3-70b-versatile`) | Rapid inference for instant symptom synthesis |
+| **Backup LLM** | Google Gemini (`gemini-1.5-flash`) | Automated secondary neural failover with structured JSON output |
+| **Schema Validation**| Pydantic v2 | Guarantees strict JSON schema conformance |
+| **Geospatial Engine**| OpenStreetMap Overpass & Nominatim | Healthcare facility queries across Indian metros and tier-2/3 towns |
+| **Distance Math** | Haversine Spherical Formula | Exact surface distance calculations in kilometers |
+| **Persistence** | SQLite3 (Thread-Safe) | Parameterized, migration-resilient consultation storage |
+| **Report Generation** | ReportLab + Responsive HTML5 | High-fidelity Devanagari/Hindi and English printable clinical summaries |
+| **Automated Testing** | Pytest (43 Passing Tests) | Comprehensive unit and integration test suite |
 
 ---
 
@@ -189,12 +209,12 @@ pip install -r requirements.txt
 ```
 
 ### 2. Configure API Secrets
-Create a `.env` file in the project root:
+Create a `.env` file in the project root (or `.streamlit/secrets.toml`):
 ```toml
-# Primary Fast Inference Provider
+# Primary Fast Inference Provider (Free at console.groq.com)
 GROQ_API_KEY="gsk_your_groq_api_key_here"
 
-# Optional Hot-Standby Failover
+# Optional Hot-Standby Failover (Free at aistudio.google.com)
 GEMINI_API_KEY="AIzaSy_your_gemini_api_key_here"
 ```
 
@@ -216,6 +236,7 @@ python -m pytest tests -v
 
 ```
 ============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.1.1, pluggy-1.6.0
 collected 43 items
 
 tests/test_auth.py ......................... PASSED                      [  9%]
@@ -253,11 +274,11 @@ Deploy live to **Streamlit Community Cloud** in 3 steps:
 ## ⚖️ Clinical Governance & Disclaimer
 
 > [!WARNING]
-> **NOT A DIAGNOSTIC DEVICE**: MediGuide AI is designed strictly for health literacy, symptom articulation, and care navigation. It does not provide definitive medical diagnoses, interpret laboratory pathology, or prescribe pharmaceutical dosages.
+> **NOT A DIAGNOSTIC DEVICE**: MediGuide AI is designed strictly for health literacy, symptom articulation, and care navigation. It does not provide medical diagnoses, interpret laboratory pathology, or prescribe pharmaceutical dosages.
 >
-> **EMERGENCY ASSISTANCE**: In any acute medical emergency, immediately dial **112 / 108** in India, **911** in the US, or **999** in the UK, or proceed to the nearest emergency department.
+> **EMERGENCY ASSISTANCE IN INDIA**: In any acute medical emergency, immediately dial **112** (National Emergency Helpline) or **108 / 102** (Government Emergency Ambulance Service), or proceed to the nearest emergency department.
 >
-> **DATA PRIVACY**: MediGuide AI is architected under patient privacy principles aligned with DISHA and HIPAA guidelines. All evaluations are stored locally in the application's database.
+> **DATA PRIVACY**: MediGuide AI is architected under patient privacy principles aligned with India's **DISHA (Digital Information Security in Healthcare Act)** guidelines. All consultations are stored locally in the application database.
 
 ---
 
