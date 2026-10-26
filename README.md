@@ -133,8 +133,6 @@ mediguide-ai/
 │   └── test_report_generator.py# Multilingual report & AI fallback tests
 ├── .streamlit/
 │   ├── config.toml             # Streamlit visual theme configuration
-│   └── secrets.toml            # (Local only - excluded via .gitignore)
-├── .env.example                # Template for local environment variables
 ├── .gitignore                  # Git repository exclusion rules
 ├── requirements.txt            # Python dependencies
 └── README.md                   # Comprehensive project documentation
@@ -215,6 +213,3 @@ All 43 tests execute and pass cleanly, verifying:
 - **Clinical Validation Requirement**: Real-world bedside deployment requires formal validation trials, institutional review board (IRB) approval, and regulatory clearance under SaMD guidelines (such as CDSCO or FDA 510(k)).
 
 ---
-
-## 📄 License
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
