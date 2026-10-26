@@ -49,7 +49,7 @@ with tab1:
         #### What MediGuide AI IS:
         - ✅ **A Care Navigation Guide**: Directs patients to the appropriate clinical department (e.g. Ophthalmology vs ENT).
         - ✅ **An Emergency Red-Flag Screener**: Highlights high-risk symptoms that warrant immediate hospital care.
-        - ✅ **A Grounded Clinical Assistant**: Anchors advice in verified clinical guidelines (WHO, ICMR, NICE) via **RAG**.
+        - ✅ **A Clinical Context Assistant**: Augments guidance with reference guidelines (WHO, ICMR, NICE) via **RAG**.
         - ✅ **A Preparation Tool**: Synthesizes symptoms, durations, and missing facts so doctor visits are more productive.
 
         #### What MediGuide AI IS NOT:
@@ -64,7 +64,7 @@ with tab2:
     st.markdown("### 🛡️ Dual-Layer & RAG Architecture")
     st.markdown(
         """
-        To eliminate generative AI hallucinations in medical settings,
+        To significantly reduce generative AI hallucinations and prioritize patient safety,
         MediGuide AI implements a **Dual-Layer Guardrail Architecture with RAG Protocol Grounding**:
         """
     )
@@ -92,7 +92,7 @@ with tab2:
             <div class="mg-card" style="border-top: 4px solid #0d9488;">
                 <div class="mg-card-header" style="color: #0f766e;">Layer 2: Grounded Clinical RAG & Neural Core</div>
                 <p style="font-size: 0.9rem; color: #334155;">
-                    • Vector retrieval over verified clinical guidelines (ICMR, WHO, NICE, CDC).<br>
+                    • Vector retrieval over indexed clinical guidelines (ICMR, WHO, NICE, CDC).<br>
                     • Injects matched clinical protocols into prompt context to prevent hallucination.<br>
                     • Strict <b>Pydantic</b> JSON schema enforcement.<br>
                     • Low temperature (0.2) to prevent creative drift.<br>
