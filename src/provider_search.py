@@ -1184,8 +1184,8 @@ class ProviderSearchService:
                                 phone=None,
                                 website=None,
                                 directions_url=f"https://www.google.com/maps/dir/?api=1&destination={plat},{plon}",
-                                data_source="OpenStreetMap Verified Facility",
-                                is_verified=True
+                                data_source="OpenStreetMap Community Facility",
+                                is_verified=False
                             )
                             providers.append(provider)
             except Exception as e:
@@ -1254,7 +1254,7 @@ class ProviderSearchService:
                                 website=tags.get("website") or tags.get("contact:website"),
                                 directions_url=f"https://www.google.com/maps/dir/?api=1&destination={plat},{plon}",
                                 data_source="OpenStreetMap Overpass API (Live)",
-                                is_verified=True
+                                is_verified=False
                             ))
                         break  # Mirror succeeded
                 except Exception:
