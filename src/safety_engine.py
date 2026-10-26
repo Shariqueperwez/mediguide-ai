@@ -54,7 +54,7 @@ SAFETY_RULES: List[SafetyRule] = [
         ],
         reasoning="Chest pain, pressure, or radiation to arm/jaw suggests acute coronary syndrome or myocardial infarction.",
         emergency_instructions=[
-            "Call your local emergency number immediately (112 in India, 911 in US, 999 in UK). Do not drive yourself.",
+            "Call emergency services immediately (112 / 108 in India). Do not drive yourself.",
             "Rest in a comfortable seated position with shoulders supported.",
             "Loosen tight clothing around neck and chest.",
             "If prescribed emergency nitroglycerin by your cardiologist, use as directed."
