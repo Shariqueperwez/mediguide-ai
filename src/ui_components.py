@@ -11,7 +11,7 @@ from src.config import SUPPORTED_COUNTRIES, get_active_country, is_demo_mode, EN
 
 CUSTOM_CSS = """
 <style>
-/* MediGuide AI Modern Enterprise Healthcare Theme */
+/* MediGuide AI Clinical Healthcare Theme */
 :root {
     --primary-color: #0d9488;
     --primary-dark: #0f766e;
@@ -557,7 +557,7 @@ def render_triage_badge(triage_level: TriageLevel or str) -> str:
 
 
 def render_sidebar():
-    """Render enterprise-grade hospital sidebar with categorized navigation, patient card, and system status."""
+    """Render clinical sidebar with categorized navigation, patient card, and system status."""
     with st.sidebar:
         # 1. Hospital / System Brand Header
         st.markdown(
