@@ -37,7 +37,7 @@ country_cfg = get_active_country()
 st.title("🩺 Intelligent Clinical Symptom Assistant")
 st.markdown(
     f"Complete clinical evaluation and triage configured for **{country_cfg.get('name')}**. "
-    f"Enter your details to generate your verified clinical summary and medical record."
+    f"Enter your details to generate your structured clinical summary and consultation record."
 )
 
 # Initialize session states
@@ -265,7 +265,7 @@ if st.session_state.current_assessment and st.session_state.last_profile:
                     <span style="background:#0d9488; color:white; font-size:0.75rem; font-weight:bold; padding:2px 8px; border-radius:10px;">ICMR • WHO • NICE Protocols</span>
                 </div>
                 <div style="font-size:0.83rem; color:#334155; margin-top:4px;">
-                    This assessment is strictly grounded in the following official medical practice guidelines:
+                    This assessment references excerpts from the following clinical practice guidelines:
                 </div>
             </div>
             """,
@@ -378,7 +378,7 @@ if st.session_state.current_assessment and st.session_state.last_profile:
         st.markdown(f"### 🏥 Recommended Clinical Specialty: **{assessment.suggested_specialty}**")
         st.markdown(
             f"Consulting a **{assessment.suggested_specialty}** is recommended for {profile.patient_name}. "
-            f"You can now locate verified clinics and hospitals specializing in this field near you."
+            f"You can now explore clinics and hospitals providing care in this specialty near your location."
         )
 
     with scol2:
